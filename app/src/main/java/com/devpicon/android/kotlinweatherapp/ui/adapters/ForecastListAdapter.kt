@@ -1,4 +1,4 @@
-package com.devpicon.android.kotlinweatherapp
+package com.devpicon.android.kotlinweatherapp.ui.adapters
 
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup

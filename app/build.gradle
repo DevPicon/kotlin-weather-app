@@ -24,6 +24,9 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
+
+    compile "com.google.code.gson:gson:2.4"
+
     compile "com.android.support:appcompat-v7:$support_version"
     compile "com.android.support:recyclerview-v7:$support_version"
 
@@ -31,12 +34,12 @@ dependencies {
     compile "org.jetbrains.anko:anko-common:$anko_version"
 }
 
-buildscript{
+buildscript {
     repositories {
         jcenter()
     }
 
-    dependencies{
+    dependencies {
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
     }
 }

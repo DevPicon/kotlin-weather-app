@@ -4,14 +4,11 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.widget.Toast
-import com.devpicon.android.kotlinweatherapp.ui.adapters.ForecastListAdapter
 import com.devpicon.android.kotlinweatherapp.R
 import com.devpicon.android.kotlinweatherapp.domain.commands.RequestForecastCommand
-import org.jetbrains.anko.async
-import org.jetbrains.anko.find
-import org.jetbrains.anko.longToast
-import org.jetbrains.anko.uiThread
+import com.devpicon.android.kotlinweatherapp.domain.model.Forecast
+import com.devpicon.android.kotlinweatherapp.ui.adapters.ForecastListAdapter
+import org.jetbrains.anko.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,13 +22,14 @@ class MainActivity : AppCompatActivity() {
         async() {
             val result = RequestForecastCommand("94043").execute()
             uiThread {
-                forecastList.adapter = ForecastListAdapter(result)
+                forecastList.adapter = ForecastListAdapter(result, object: ForecastListAdapter.OnItemClickListener{
+                    override fun invoke(forecast: Forecast){
+                        toast(forecast.date)
+                    }
+                })
                 longToast("Request performed")
             }
         }
     }
 
-    fun toast(message: String, length: Int = Toast.LENGTH_SHORT) {
-        Toast.makeText(this, message, length).show()
-    }
 }

@@ -53,6 +53,7 @@ class ForecastListAdapter(val weekForecast: ForecastList, val itemClick: (Foreca
                 descriptionView.text = description
                 maxTemperatureView.text = "${high.toString()}°"
                 minTemperatureView.text = "${low.toString()}°"
+                itemView.setOnClickListener { itemClick(this) }
             }
         }
     }

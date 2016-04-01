@@ -1,4 +1,4 @@
-package com.devpicon.android.kotlinweatherapp.data
+package com.devpicon.android.kotlinweatherapp.data.server
 
 /**
  * Created by Reapro on 26/03/2016.

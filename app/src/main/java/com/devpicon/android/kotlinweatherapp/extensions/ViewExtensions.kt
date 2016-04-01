@@ -1,4 +1,4 @@
-package com.devpicon.android.kotlinweatherapp.ui.utils
+package com.devpicon.android.kotlinweatherapp.extensions
 
 import android.content.Context
 import android.view.View

@@ -1,4 +1,4 @@
-package com.devpicon.android.kotlinweatherapp.ui.utils
+package com.devpicon.android.kotlinweatherapp.extensions
 
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty

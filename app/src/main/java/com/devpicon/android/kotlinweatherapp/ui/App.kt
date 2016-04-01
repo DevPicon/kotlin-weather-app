@@ -1,7 +1,7 @@
 package com.devpicon.android.kotlinweatherapp.ui
 
 import android.app.Application
-import com.devpicon.android.kotlinweatherapp.ui.utils.DelegatesExt
+import com.devpicon.android.kotlinweatherapp.extensions.DelegatesExt
 
 /**
  * Created by Armando on 3/29/2016.

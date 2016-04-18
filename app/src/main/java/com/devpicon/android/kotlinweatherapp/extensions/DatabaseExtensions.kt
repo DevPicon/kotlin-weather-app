@@ -5,7 +5,7 @@ import org.jetbrains.anko.db.MapRowParser
 import org.jetbrains.anko.db.SelectQueryBuilder
 
 /**
- * Created by Reapro on 01/04/2016.
+ * Created by Armando on 01/04/2016.
  */
 
 fun <T : Any> SelectQueryBuilder.parseList(parser: (Map<String, Any>) -> T): List<T> =

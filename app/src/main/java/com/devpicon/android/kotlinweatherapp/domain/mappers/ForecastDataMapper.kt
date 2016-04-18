@@ -3,8 +3,6 @@ package com.devpicon.android.kotlinweatherapp.domain.mappers
 import com.devpicon.android.kotlinweatherapp.data.server.Forecast
 import com.devpicon.android.kotlinweatherapp.data.server.ForecastResult
 import com.devpicon.android.kotlinweatherapp.domain.model.ForecastList
-import java.text.DateFormat
-import java.util.*
 import com.devpicon.android.kotlinweatherapp.domain.model.Forecast as ModelForecast
 
 /**
@@ -12,8 +10,7 @@ import com.devpicon.android.kotlinweatherapp.domain.model.Forecast as ModelForec
  */
 class ForecastDataMapper {
     fun convertFromDataModel(zipCode: Long, forecast: ForecastResult) = with(forecast) {
-        return ForecastList(zipCode, city.name, city.country,
-                convertForecastListToDomain(forecast.list))
+        ForecastList(zipCode, city.name, city.country,convertForecastListToDomain(forecast.list))
     }
 
     private fun convertForecastListToDomain(list: List<Forecast>): List<ModelForecast> {

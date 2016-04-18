@@ -2,12 +2,11 @@ package com.devpicon.android.kotlinweatherapp.data.db
 
 import com.devpicon.android.kotlinweatherapp.domain.model.ForecastList
 import com.devpicon.android.kotlinweatherapp.extensions.clear
-
 import com.devpicon.android.kotlinweatherapp.extensions.parseList
 import com.devpicon.android.kotlinweatherapp.extensions.parseOpt
 import com.devpicon.android.kotlinweatherapp.extensions.toVarargArray
-import org.jetbrains.anko.db.select
 import org.jetbrains.anko.db.insert
+import org.jetbrains.anko.db.select
 import java.util.*
 
 
@@ -16,6 +15,7 @@ import java.util.*
  */
 class ForecastDb(val forecastDbHelper: ForecastDbHelper = ForecastDbHelper.instance,
                  val dataMapper: DbDataMapper = DbDataMapper()) {
+
     fun requestForecastByZipCode(zipCode: Long, date: Long) = forecastDbHelper.use {
         val dailyRequest = "${DayForecastTable.CITY_ID} = ? AND ${DayForecastTable.DATE} >= ?"
         val dailyForecast = select(DayForecastTable.NAME)

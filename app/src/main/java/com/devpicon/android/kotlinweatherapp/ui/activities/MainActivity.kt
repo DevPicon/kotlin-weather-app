@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager
 import com.devpicon.android.kotlinweatherapp.R
 import com.devpicon.android.kotlinweatherapp.domain.commands.RequestForecastCommand
 import com.devpicon.android.kotlinweatherapp.ui.adapters.ForecastListAdapter
-import kotlinx.android.synthetic.main.activity_main.forecastList
+import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.async
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.uiThread
@@ -22,7 +22,8 @@ class MainActivity : AppCompatActivity() {
         async() {
             val result = RequestForecastCommand(94043).execute()
             uiThread {
-                forecastList.adapter = ForecastListAdapter(result) { toast(it.description) }
+                val adapter = ForecastListAdapter(result, { toast(it.description) })
+                forecastList.adapter = adapter
             }
         }
     }

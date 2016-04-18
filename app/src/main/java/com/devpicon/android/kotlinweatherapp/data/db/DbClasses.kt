@@ -10,7 +10,8 @@ class CityForecast(val map: MutableMap<String, Any?>, val dailyForecast: List<Da
     var city: String by map
     var country: String by map
 
-    constructor(id: Long, city: String, country: String, dailyForecast: List<DayForecast>) : this(HashMap(), dailyForecast) {
+    constructor(id: Long, city: String, country: String, dailyForecast: List<DayForecast>)
+    : this(HashMap(), dailyForecast) {
         this._id = id
         this.city = city
         this.country = country
